@@ -6,3 +6,8 @@ export class AppService {
     return 'Hello World!';
   }
 }
+export class CatService{
+  getCat(): string {
+  	return 'Cat';
+  }
+}

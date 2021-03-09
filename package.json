@@ -23,9 +23,13 @@
     "@nestjs/common": "^7.6.13",
     "@nestjs/core": "^7.6.13",
     "@nestjs/platform-express": "^7.6.13",
+    "@nestjs/typeorm": "^7.1.5",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^6.6.6"
+    "rxjs": "^6.6.6",
+    "typeorm": "^0.2.31"
   },
   "devDependencies": {
     "@nestjs/cli": "^7.5.6",
@@ -65,5 +69,10 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
+  },
+  "linters": {
+    "eslint": {
+      "selector": "./src/* - meta.attribute-with-value"
+    }
   }
 }
