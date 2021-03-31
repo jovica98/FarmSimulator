@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Param, Body, HttpCode } from '@nestjs/common';
+import { Controller, Get, Post, Param, Body, HttpCode, Header, Delete } from '@nestjs/common';
 import { BuildingService} from './building.service';
 import {Building} from './building.entity'
 
@@ -22,10 +22,17 @@ export class BuildingController {
   }
 
   @Post()
+  @Header('Access-Control-Allow-Origin', '*')
   @HttpCode(200)
     create(@Body() postBody: PostBody) {
-    	console.log(postBody.name,postBody.unitName)
         return this.buildingService.post(postBody.name,postBody.unitName);
     }
+
+
+  @Delete()
+  async delete(): Promise<string>{
+    return await this.buildingService.removeAll();
+  }
 }
+
 

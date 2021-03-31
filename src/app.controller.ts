@@ -1,5 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
-import { AppService, CatService } from './app.service';
+import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
@@ -11,12 +11,3 @@ export class AppController {
   }
 }
 
-@Controller('cats')
-export class  CatControler {
-	constructor(private readonly catService: CatService) {}
-
-	@Get()
-	getCat(): string{
-		return this.catService.getCat()
-	}
-}
