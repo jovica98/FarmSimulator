@@ -26,13 +26,11 @@ export class FarmUnitController {
   @Header('Access-Control-Allow-Origin', '*')
   @HttpCode(200)
     async create(@Body() farmUnitBody : FarmUnitBody) {
-      console.log('Controller',farmUnitBody.buildingID)
-        return await this.farmUnitService.post(farmUnitBody.buildingID);
+      return await this.farmUnitService.post(farmUnitBody.buildingID);
     }
 
   @Get(':buildingID')
   async getFarmUnits(@Param('buildingID') buildingID: number): Promise<any[]>{
-    console.log(buildingID,await this.farmUnitService.get(buildingID));
     return await this.farmUnitService.get(buildingID);
   }
 

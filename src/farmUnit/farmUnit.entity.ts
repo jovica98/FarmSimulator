@@ -5,7 +5,7 @@ import { Building } from '../building/building.entity'
 @Entity()
 export class FarmUnit {
 	constructor(id ){
-    if(id!=undefined)//console.log('constructor',id.buildingID)
+    if(id!=undefined)
 		this.buildingID = id;
 		this.isEnable = false;
 		this.health = Math.floor(Math.random() * (100 - 50) + 50);
@@ -22,7 +22,4 @@ export class FarmUnit {
 
   	@Column()
   		health: number;
-
-  	//@ManyToOne(type => Building, building => building.farmUnits)
-  	//	building: Building;
 }

@@ -14,7 +14,6 @@ import axios from 'axios'
 class FeedInterval{
   @Interval(5000)
   feedEnable(): void {
-    console.log('Interval')
     let enable : boolean = true;
     //farmUnitService.setFeedEnabled(enable);
   }
